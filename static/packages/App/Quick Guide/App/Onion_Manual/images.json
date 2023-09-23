@@ -3,6 +3,6 @@
     { "path": "./page1.png", "title": "빠른 가이드" },
     { "path": "./page2.png", "title": "특징" },
     { "path": "./page3.png", "title": "단축키" },
-    { "path": "./page4.png", "title": "참고사항" }
+    { "path": "./page4.png", "title": "참고" }
   ]
 }
