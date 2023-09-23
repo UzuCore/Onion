@@ -153,7 +153,7 @@ void theme_renderList(SDL_Surface *screen, List *list)
         if (!list_small && strlen(item->description)) {
             theme_renderListLabel(
                 screen, item->description, theme()->grid.color, offset_x,
-                item_bg_rect.y + 66, list->active_pos == i, label_end, show_disabled);
+                item_bg_rect.y + 92, list->active_pos == i, label_end, show_disabled);
         }
     }
 
