@@ -2,7 +2,7 @@
 
 # <img alt="Onion" src="https://user-images.githubusercontent.com/44569252/179510333-40793fbc-f2a3-4269-8ab9-569b191d423f.png" width="196px">
 
-*An enhanced operating system for your Miyoo Mini, featuring fine-tuned emulation with 100+ built-in emulators, auto-save and resume, a wealth of customization options, and much more. Performant, reliable, and straightforward retro gaming right in your pocket.*
+*100개 이상의 내장 에뮬레이터, 자동 저장 및 재개, 다양한 사용자 정의 옵션 등을 갖춘 미세 조정된 에뮬레이션을 갖춘 Miyoo Mini용 향상된 운영 체제입니다. 성능이 뛰어나고 안정적이며 간단한 복고풍 게임을 주머니에 넣어보세요.*
 
 <p>&nbsp;</p>
 
