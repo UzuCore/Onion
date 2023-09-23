@@ -38,7 +38,7 @@ typedef struct package_s {
     bool complete;
 } Package;
 
-static char layer_names[][STR_MAX] = {"VERIFIED", "APPS", "EXPERT", "SUMMARY"};
+static char layer_names[][STR_MAX] = {"게임콘솔", "프로그램", "숙련모드", "요약"};
 static char layer_dirs[][STR_MAX] = {PACKAGE_DIR "Emu", PACKAGE_DIR "App",
                                      PACKAGE_DIR "RApp", ""};
 static const int tab_count = 4;
