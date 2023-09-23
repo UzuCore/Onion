@@ -30,8 +30,8 @@ do
     if [ "$element" == "Silky by DiMo" ]; then
         echo "-- extracting theme: $element"
         unzip -oq "$zipfile" -d ../dist/Themes
-        # sed -i "s/Exo-2-Bold-Italic_Universal.ttf/NanumSquareNeo-cBd.ttf/g" "../dist/Themes/$element/config.json"
-        # sed -i "s/wqy-microhei.ttc/NanumSquareNeo-bRg.ttf/g" "../dist/Themes/$element/config.json"
+        #sed -i "s/Exo-2-Bold-Italic_Universal.ttf/NanumSquareNeo-cBd.ttf/g" "../dist/Themes/$element/config.json"
+        sed -i "s/wqy-microhei.ttc/NanumSquareNeo-aLt.ttf/g" "../dist/Themes/$element/config.json"
     else
         echo "-- copying theme: $element"
         cp "$zipfile" ../dist/Themes
