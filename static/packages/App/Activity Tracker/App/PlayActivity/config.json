@@ -1,6 +1,6 @@
 {
-"label":"Activity Tracker",
+"label":"액티비티 트래커",
 "icon":"../../Icons/Default/app/activity.png",
 "launch":"launch.sh",
-"description":"Track your play activity"
+"description":"플레이 활동을 추적"
 }

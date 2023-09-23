@@ -1,6 +1,6 @@
 {
-    "label": "Guest Mode [OFF]",
+    "label": "손님 모드 [꺼짐]",
     "icon": "../../Icons/Default/app/guest_off.png",
     "launch": "launch.sh",
-    "description": "Activate the guest profile"
+    "description": "손님 프로필 활성화"
 }

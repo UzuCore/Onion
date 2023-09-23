@@ -1,6 +1,6 @@
 {
-"label":"Display Calibration",
+"label":"디스플레이 보정",
 "icon":"../../Icons/Default/app/display.png",
 "launch":"launch.sh",
-"description":"240pSuite (Menu+Select to exit)"
+"description":"240pSuite (매뉴+셀렉트키로 나가기)"
 }

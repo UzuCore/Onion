@@ -1,6 +1,6 @@
 {
-    "label": "Tweaks",
+    "label": "트윅",
     "icon": "../../Icons/Default/app/tweaks.png",
     "launch": "launch.sh",
-    "description": "System tweaks and tools"
+    "description": "시스템 트윅과 도구들"
 }

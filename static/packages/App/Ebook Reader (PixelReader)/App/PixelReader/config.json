@@ -1,6 +1,6 @@
 {
-"label":"Ebook Reader",
+"label":"이북 리더",
 "icon":"../../Icons/Default/app/ereader.png",
 "launch":"launch.sh",
-"description":"PixelReader v0.4"
+"description":"픽셀리더 v0.4"
 }

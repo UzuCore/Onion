@@ -12,7 +12,7 @@ echo "===================== displaying : ./logos/$foldername/image1.jpg"
 # Check firmware version
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
-echo "Current firmware version : $MIYOO_VERSION"
+echo "현재 펌웨어 버전 : $MIYOO_VERSION"
 
 if [ -f "/customer/app/axp_test" ]; then  # differenciate MM and MMP supported firmware
 	MODEL="MMP"
@@ -26,7 +26,7 @@ fi
 
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
-	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
+	./bin/say "지원하지 않는 펌웨어입니다."$'\n 20230326 이후 버전은\n현재 지원되지 않습니다.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
 	./bin/confirm any
 	exit 0
 fi
@@ -137,12 +137,12 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
     		if [ "$myfilesize" = "131072" ]; then
     			pkill -3 advmenu
     			./bin/blank
-    			./bin/say "${myfilesize}kb : Right file size"
+    			./bin/say "${myfilesize}kb : 올바른 파일 사이즈"
     			sleep 1.5
 				
     			# == We don't backup anymore the current logo (useless most of the time) ==
     			# ./bin/blank
-    			# ./bin/say "Backuping current logo..."
+    			# ./bin/say "현재 로고를 백업합니다..."
     			# ./bin/logoread
     			# BackupFolder=backup_$(date +%Y%m%d_%H%M%S)
     			# mkdir ./$BackupFolder
@@ -155,7 +155,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 				
 				if [ "$MODEL" = "MMP" ]; then
 						./bin/blank
-						./bin/say "Flashing..."
+						./bin/say "플래싱..."
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
@@ -169,7 +169,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 					
 					if [ $CHECK_WRITE -eq 0 ]; then
 						./bin/blank
-						./bin/say "Flashing..."
+						./bin/say "플래싱..."
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
@@ -180,7 +180,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 					
 					if [ $CHECK_WRITE -eq 1 ]; then
 						./bin/blank
-						./bin/say "Creating logo fw file..."
+						./bin/say "로고 파일을 작성합니다..."
 						./bin/logoimgmake
 						mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
 						sleep 1.5
@@ -194,13 +194,13 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 
     		else
     			./bin/blank
-    			./bin/say "logo.img doesn t have the right size"$'\n'"Exiting without flash !"
+    			./bin/say "logo.img의 사이즈가 올바르지 않습니다"$'\n'"플래싱없이 종료합니다!"
     			sleep 3
     			exit 0
     		fi
     	elif [ "$KeyPressed" = "B" ] || [ "$KeyPressed" = "menu" ] ; then
     		./bin/blank
-    		./bin/say "Cancelling"
+    		./bin/say "취소하는중"
     		exit
 		elif [ "$KeyPressed" = "select" ]; then    # == if select has been pressed we don't display the text instructions
 			if [ "$DisplayInstructions" = "1" ]; then
@@ -211,16 +211,16 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 				DisplayInstructions=1
 			#	./bin/blank
 	            ./bin/jpgr "./logos/$foldername/image1.jpg"   # == Displays a rotated preview of the jpeg file
-				./bin/say "Really want to flash ?"$'\n'\("$foldername"\)$'\n\nA = Confirm    B = Cancel\nSelect = Fullscreen'
+				./bin/say "정말로 플래싱 할까요?"$'\n'\("$foldername"\)$'\n\nA = 확인    B = 취소\nSelect = 전체화면'
 			fi
    
     	   	   
     	fi
 	done
 else
-	echo "./logos/$foldername/image1.jpg not found"
+	echo "./logos/$foldername/image1.jpg를 찾을 수 없습니다"
 	./bin/blank
-	./bin/say "$foldername/image1.jpg not found"$'\n\nExiting without flash !'
+	./bin/say "$foldername/image1.jpg를 찾을 수 없습니다"$'\n\n플래싱없이 종료합니다!'
 	./bin/confirm any
 	exit 1
 fi

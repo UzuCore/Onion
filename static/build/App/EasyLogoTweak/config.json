@@ -1,6 +1,6 @@
 {
-"label":"LogoTweak v3.0.4",
+"label":"로고 트윅 v3.0.4",
 "icon":	"EasyLogoTweak.png",
 "launch":"launch.sh",
-"description":"Change your boot logo easily."
+"description":"부팅 로고를 손쉽게 변경"
 }

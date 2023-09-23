@@ -1,5 +1,5 @@
 {
-"label":"PDF Reader",
+"label":"PDF 리더기",
 "icon":"../../Icons/Default/app/pdf.png",
 "iconsel":"",
 "launch":"launch.sh",

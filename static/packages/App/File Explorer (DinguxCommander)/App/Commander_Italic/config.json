@@ -1,6 +1,6 @@
 {
-"label":"File Explorer",
+"label":"파일 관리자",
 "icon":"../../Icons/Default/app/commander.png",
 "launch":"launch.sh",
-"description":"DinguxCommander"
+"description":"딩구스커맨더"
 }

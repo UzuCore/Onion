@@ -1,7 +1,7 @@
 {
-"label":"Expert",
+"label":"숙련모드",
 "icon":"../../Icons/Default/app/expert.png",
 "launch":"launch.sh",
-"description":"Expert tab shortcut"
+"description":"숙련모드 탭 바로가기"
 }
     

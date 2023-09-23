@@ -1,6 +1,6 @@
 {
-"label":"Music Player",
+"label":"뮤직 플레이어",
 "icon":"../../Icons/Default/app/music.png",
 "launch":"launch.sh",
-"description":"GMU (Menu+Start to exit)"
+"description":"GMU (매뉴+시작키로 나가기)"
 }

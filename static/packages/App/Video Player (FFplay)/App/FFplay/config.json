@@ -1,5 +1,5 @@
 {
-"label":"Video Player",
+"label":"비디오 플레이어",
 "icon":"../../Icons/Default/app/ffplay.png",
 "launch":"launch.sh",
 "description":"FFplay"

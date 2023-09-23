@@ -1,6 +1,6 @@
 {
-"label":"Quick Guide",
+"label":"빠른 가이드",
 "icon":"../../Icons/Default/app/manual.png",
 "launch":"launch.sh",
-"description":"Getting started with Onion"
+"description":"어니언과 함께 시작하기"
 }

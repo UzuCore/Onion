@@ -1,6 +1,6 @@
 {
-"label":"Package Manager",
+"label":"패키지 매니저",
 "icon":"../../Icons/Default/app/pacman.png",
 "launch":"launch.sh",
-"description":"Add or remove systems and apps"
+"description":"시스템 및 앱 추가 또는 제거"
 }

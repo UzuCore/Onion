@@ -1,6 +1,6 @@
 {
-	"label": "Onion OTA update",
+	"label": "어니언 OTA 업데이트",
 	"icon": "/mnt/SDCARD/Icons/Default/app/pacman.png",
 	"launch": "launch.sh",
-	"description": "Update Onion over internet"
+	"description": "인터넷을 통해 어니언 업데이트"
 }

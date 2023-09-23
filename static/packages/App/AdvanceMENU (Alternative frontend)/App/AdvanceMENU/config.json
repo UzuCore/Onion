@@ -1,6 +1,6 @@
 {
-	"label": "AdvanceMENU",
+	"label": "어드밴스 매뉴",
 	"icon": "../../Icons/Default/app/advancemenu.png",
 	"launch": "launch.sh",
-	"description": "Advanced emulator frontend"
+	"description": "어드밴스 에뮬레이터 프런트엔드"
 }
