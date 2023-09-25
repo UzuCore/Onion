@@ -759,9 +759,9 @@ int main(int argc, char *argv[])
     surfaceCheck = IMG_Load("/mnt/SDCARD/.tmp_update/res/toggle-on.png");
     surfaceCross = IMG_Load("/mnt/SDCARD/.tmp_update/res/toggle-off.png");
 
-    font18 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 18);
-    font25 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 25);
-    font35 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 35);
+    font18 = TTF_OpenFont("/customer/app/wqy-microhei.tcc", 18);
+    font25 = TTF_OpenFont("/customer/app/wqy-microhei.tcc", 25);
+    font35 = TTF_OpenFont("/customer/app/NanumSquareNeo-aLt.ttf", 35);
 
     if (!auto_update) {
         SDL_Surface *loadingScreen = IMG_Load("res/loading.png");
