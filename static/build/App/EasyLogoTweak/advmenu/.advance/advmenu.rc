@@ -81,7 +81,7 @@ ui_menukey no
 ui_game snap
 ui_gamemsg "LOADING"
 ui_background bg.png
-ui_menu_font "/mnt/SDCARD/miyoo/app/NanumSquareNeo-aLt.ttf"
+ui_menu_font "/mnt/SDCARD/miyoo/app/wqy-microhei.ttc"
 ui_menu_size 20
 ui_text_font "/mnt/SDCARD/miyoo/app/wqy-microhei.ttc"
 ui_text_size 34
