@@ -1,0 +1,6 @@
+{
+"label":"로고 트윅 v3.0.4",
+"icon":	"../../Icons/Default/app/burglary.png",
+"launch":"launch.sh",
+"description":"부팅 로고를 손쉽게 변경"
+}
