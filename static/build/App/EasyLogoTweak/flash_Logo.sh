@@ -71,8 +71,8 @@ checkjpg() {
 # if we press "A" for flashing and the current image exists
 if [ -f "./logos/$foldername/image1.jpg" ]; then
 	DisplayInstructions=1
-	./bin/say "Really want to flash ?"$'\n'\("$foldername"\)$'\n\nA = Confirm    B = Cancel\nSelect = Fullscreen'
-	
+	./bin/say "정말로 플래싱 할까요?"$'\n'\("$foldername"\)$'\n\nA = 확인    B = 취소\nSelect = 전체화면'
+
 	while :
 	do
     	KeyPressed=$(./bin/getkey)
@@ -159,7 +159,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
-						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+						./bin/say "플래싱 완료."$'\n 변경 사항을 보려면 재부팅하세요.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
 						./bin/confirm any
 						exit 0
 				else
@@ -173,7 +173,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
-						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
+						./bin/say "플래싱 완료."$'\n 변경 사항을 보려면 재부팅하세요.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
 						./bin/confirm any
 						exit 0
 					fi
@@ -185,7 +185,7 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 						mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
 						sleep 1.5
 						./bin/blank
-						./bin/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
+						./bin/say "이미지 파일 작성완료."$'\n 전원을 끄고 메뉴를 누른 다음\nUSB 충전기에 연결하세요.\n충전 애니메이션이 표시되면 전원을 끄세요.'
 						./bin/confirm any
 						exit 0
 					fi
