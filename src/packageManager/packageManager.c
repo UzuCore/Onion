@@ -759,8 +759,8 @@ int main(int argc, char *argv[])
     surfaceCheck = IMG_Load("/mnt/SDCARD/.tmp_update/res/toggle-on.png");
     surfaceCross = IMG_Load("/mnt/SDCARD/.tmp_update/res/toggle-off.png");
 
-    font18 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 18);
-    font25 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 25);
+    font18 = TTF_OpenFont("/customer/app/SCDream3.ttf", 18);
+    font25 = TTF_OpenFont("/customer/app/SCDream3.ttf", 25);
     font35 = TTF_OpenFont("/customer/app/NanumSquareNeo-aLt.ttf", 35);
 
     if (!auto_update) {
