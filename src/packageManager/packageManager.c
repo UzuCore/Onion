@@ -761,7 +761,7 @@ int main(int argc, char *argv[])
 
     font18 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 18);
     font25 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 25);
-    font35 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 35);
+    font35 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 35);
 
     if (!auto_update) {
         SDL_Surface *loadingScreen = IMG_Load("res/loading.png");
@@ -1012,7 +1012,7 @@ int main(int argc, char *argv[])
                 }
                 else {
                     SDL_Surface *status = TTF_RenderUTF8_Blended(
-                        font35, "NO CHANGES", color_white);
+                        font35, "변경없음", color_white);
                     SDL_Rect status_rect = {
                         alignCoord(320, status->w, ALIGN_CENTER),
                         alignCoord(247, status->h, ALIGN_CENTER)};
