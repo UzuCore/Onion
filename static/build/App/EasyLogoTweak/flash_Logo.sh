@@ -12,7 +12,7 @@ echo "===================== displaying : ./logos/$foldername/image1.jpg"
 # Check firmware version
 MIYOO_VERSION=`/etc/fw_printenv miyoo_version`
 MIYOO_VERSION=${MIYOO_VERSION#miyoo_version=}
-echo "현재 펌웨어 버전 : $MIYOO_VERSION"
+echo "Current firmware version : $MIYOO_VERSION"
 
 if [ -f "/customer/app/axp_test" ]; then  # differenciate MM and MMP supported firmware
 	MODEL="MMP"
@@ -26,7 +26,7 @@ fi
 
 if [ $MIYOO_VERSION -gt $SUPPORTED_VERSION ]; then
 	./bin/blank
-	./bin/say "지원하지 않는 펌웨어입니다."$'\n 20230326 이후 버전은\n현재 지원되지 않습니다.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
+	./bin/say "Firmware not supported."$'\n Versions further 20230326\nare not supported for now.\n\nPress a key to return to app menu.'
 	./bin/confirm any
 	exit 0
 fi
@@ -71,8 +71,8 @@ checkjpg() {
 # if we press "A" for flashing and the current image exists
 if [ -f "./logos/$foldername/image1.jpg" ]; then
 	DisplayInstructions=1
-	./bin/say "정말로 플래싱 할까요?"$'\n'\("$foldername"\)$'\n\nA = 확인    B = 취소\nSelect = 전체화면'
-
+	./bin/say "Really want to flash ?"$'\n'\("$foldername"\)$'\n\nA = Confirm    B = Cancel\nSelect = Fullscreen'
+	
 	while :
 	do
     	KeyPressed=$(./bin/getkey)
@@ -137,12 +137,12 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
     		if [ "$myfilesize" = "131072" ]; then
     			pkill -3 advmenu
     			./bin/blank
-    			./bin/say "${myfilesize}kb : 올바른 파일 사이즈"
+    			./bin/say "${myfilesize}kb : Right file size"
     			sleep 1.5
 				
     			# == We don't backup anymore the current logo (useless most of the time) ==
     			# ./bin/blank
-    			# ./bin/say "현재 로고를 백업합니다..."
+    			# ./bin/say "Backuping current logo..."
     			# ./bin/logoread
     			# BackupFolder=backup_$(date +%Y%m%d_%H%M%S)
     			# mkdir ./$BackupFolder
@@ -155,11 +155,11 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 				
 				if [ "$MODEL" = "MMP" ]; then
 						./bin/blank
-						./bin/say "플래싱..."
+						./bin/say "Flashing..."
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
-						./bin/say "플래싱 완료."$'\n 변경 사항을 보려면 재부팅하세요.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
+						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
 						./bin/confirm any
 						exit 0
 				else
@@ -169,23 +169,23 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 					
 					if [ $CHECK_WRITE -eq 0 ]; then
 						./bin/blank
-						./bin/say "플래싱..."
+						./bin/say "Flashing..."
 						./bin/logowrite
 						sleep 1.5
 						./bin/blank
-						./bin/say "플래싱 완료."$'\n 변경 사항을 보려면 재부팅하세요.\n\n메뉴로 돌아가려면 아무키나 누르세요.'
+						./bin/say "Flash Done."$'\n Reboot to see changes.\n\nPress a key to return to app menu.'
 						./bin/confirm any
 						exit 0
 					fi
 					
 					if [ $CHECK_WRITE -eq 1 ]; then
 						./bin/blank
-						./bin/say "로고 파일을 작성합니다..."
+						./bin/say "Creating logo fw file..."
 						./bin/logoimgmake
 						mv ./miyoo283_fw.img /mnt/SDCARD/miyoo283_fw.img
 						sleep 1.5
 						./bin/blank
-						./bin/say "이미지 파일 작성완료."$'\n 전원을 끄고 메뉴를 누른 다음\nUSB 충전기에 연결하세요.\n충전 애니메이션이 표시되면 전원을 끄세요.'
+						./bin/say "IMG file created."$'\n Power off, hold MENU\nand plug into USB charger\nTurn off when charging\nanimation is shown.'
 						./bin/confirm any
 						exit 0
 					fi
@@ -194,13 +194,13 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 
     		else
     			./bin/blank
-    			./bin/say "logo.img의 사이즈가 올바르지 않습니다"$'\n'"플래싱없이 종료합니다!"
+    			./bin/say "logo.img doesn t have the right size"$'\n'"Exiting without flash !"
     			sleep 3
     			exit 0
     		fi
     	elif [ "$KeyPressed" = "B" ] || [ "$KeyPressed" = "menu" ] ; then
     		./bin/blank
-    		./bin/say "취소하는중"
+    		./bin/say "Cancelling"
     		exit
 		elif [ "$KeyPressed" = "select" ]; then    # == if select has been pressed we don't display the text instructions
 			if [ "$DisplayInstructions" = "1" ]; then
@@ -211,16 +211,16 @@ if [ -f "./logos/$foldername/image1.jpg" ]; then
 				DisplayInstructions=1
 			#	./bin/blank
 	            ./bin/jpgr "./logos/$foldername/image1.jpg"   # == Displays a rotated preview of the jpeg file
-				./bin/say "정말로 플래싱 할까요?"$'\n'\("$foldername"\)$'\n\nA = 확인    B = 취소\nSelect = 전체화면'
+				./bin/say "Really want to flash ?"$'\n'\("$foldername"\)$'\n\nA = Confirm    B = Cancel\nSelect = Fullscreen'
 			fi
    
     	   	   
     	fi
 	done
 else
-	echo "./logos/$foldername/image1.jpg를 찾을 수 없습니다"
+	echo "./logos/$foldername/image1.jpg not found"
 	./bin/blank
-	./bin/say "$foldername/image1.jpg를 찾을 수 없습니다"$'\n\n플래싱없이 종료합니다!'
+	./bin/say "$foldername/image1.jpg not found"$'\n\nExiting without flash !'
 	./bin/confirm any
 	exit 1
 fi

@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
 
     TTF_Font *font40 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 40);
     TTF_Font *font21 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 21);
-    TTF_Font *font30 = TTF_OpenFont("/customer/app/Exo-2-Bold-Italic.ttf", 30);
+    TTF_Font *font30 = TTF_OpenFont("/customer/app/wqy-microhei.ttc", 30);
 
     SDL_Color color_white = {255, 255, 255};
 
@@ -192,7 +192,7 @@ int main(int argc, char *argv[])
 
     int levelPage = 0;
 
-    showCenteredMessage(video, screen, "Loading previews...", font30,
+    showCenteredMessage(video, screen, "미리보기 로딩중...", font30,
                         color_white);
 
     char themes[NUMBER_OF_THEMES][STR_MAX];
@@ -264,7 +264,7 @@ int main(int argc, char *argv[])
 
         if (keystate[SW_BTN_A]) {
             if (levelPage == 1) {
-                showCenteredMessage(video, screen, "Installing...", font30,
+                showCenteredMessage(video, screen, "설치하는 중...", font30,
                                     color_white);
 
                 // Install theme

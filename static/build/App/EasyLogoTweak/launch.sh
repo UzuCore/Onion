@@ -12,7 +12,7 @@ cd "$progdir"
 
 
 if [ -f "/mnt/SDCARD/.tmp_update/onionVersion/version.txt" ]; then
-	infoPanel -t "이지 로고트윅" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\nMusic : The World Of Douve by DOUVE" --persistent &
+	infoPanel -t "Easy LogoTweak" -m "LOADING...\n \nEasy LogoTweak by Schmurtz\nMusic : The World Of Douve by DOUVE" --persistent &
 	LD_LIBRARY_PATH="./libs:$LD_LIBRARY_PATH"
 else
 	LD_LIBRARY_PATH="./libs:./bin:/customer/lib:/config/lib:/lib"
