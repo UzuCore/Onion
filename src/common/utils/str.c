@@ -208,7 +208,7 @@ bool includeCJK(char *str)
     while (*str) {
         unsigned char c = *str;
         // normal cjk range
-        if (c >= 0x4E00 && c <= 0x9FA5) {
+        if (c >= 0x80 && c <= 0x9FFF) {
             return true;
         }
         str++;
