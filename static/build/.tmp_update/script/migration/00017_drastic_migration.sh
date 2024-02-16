@@ -20,21 +20,11 @@ migrate_drastic() {
         mkdir -p "$new_save_folder"
         cp "$old_save_folder"/*.* "$new_save_folder"/
         cp "$old_savestate_folder"/*.* "$new_save_folder"/
-        # if some save states were present, we keep the existing bios for compatibility
-        retVal=$?
-        if [ $retVal -eq 0 ]; then
-            mkdir -p /tmp/drasticBios/
-            cp "$old_drastic_folder"/system/*.bin "/tmp/drasticBios/"
-        fi
 
         7z a -r -mx0 "$backup_zip_file" "$old_drastic_folder"/
         rm -rf "$old_drastic_folder"/
 
         cp -r "$drastic_package_location"/* "/mnt/SDCARD/"
-        if [ -d "/tmp/drasticBios/" ]; then
-            cp "/tmp/drasticBios/"*.bin "/mnt/SDCARD/Emu/NDS/system/"
-            rm -r "/tmp/drasticBios/"
-        fi
         rm "$game_list_cache"
     fi
 }
