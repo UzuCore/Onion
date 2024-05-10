@@ -86,7 +86,9 @@ main() {
     HOME=/mnt/SDCARD/RetroArch/
 
     # Disable VNC server flag at boot
-    rm $sysdir/config/.vncServer
+    if [ -f "$sysdir/config/.vncServer" ]; then
+        rm "$sysdir/config/.vncServer"
+    fi
 
     # Detect if MENU button is held
     detectKey 1
@@ -673,6 +675,10 @@ init_system() {
     cat /proc/ls
     sleep 0.25
 
+    # setup loopback interface for RetroArch CMDs
+    ip addr add 127.0.0.1/8 dev lo
+    ifconfig lo up
+
     if [ $DEVICE_ID -eq $MODEL_MMP ] && [ -f $sysdir/config/.lcdvolt ]; then
         $sysdir/script/lcdvolt.sh 2> /dev/null
     fi
@@ -735,6 +741,16 @@ load_settings() {
                 sed 's/^\s*"vol":\s*[0-9][0-9]*/\t"vol":\t20/g' |
                 sed 's/^\s*"mute":\s*[0-9][0-9]*/\t"mute":\t0/g' \
                     > temp
+            mv -f temp /mnt/SDCARD/system.json
+        fi
+    fi
+
+    default_volume="${sysdir}/config/.defaultVolume-${device_uuid}"
+    if [ -f "$default_volume" ]; then
+        volume=$(printf '%d' "$(cat "$default_volume")")
+        if [ $? -eq 0 ]; then
+            cat /mnt/SDCARD/system.json |
+                sed 's/^\s*"vol":\s*[0-9][0-9]*/\t"vol":\t'$volume'/g' > temp
             mv -f temp /mnt/SDCARD/system.json
         fi
     fi
@@ -815,7 +831,9 @@ check_networking() {
     if pgrep -f update_networking.sh; then
         log "update_networking already running"
     else
-        rm /tmp/network_changed
+        if [ -f /tmp/network_changed ]; then
+            rm /tmp/network_changed
+        fi
         $sysdir/script/network/update_networking.sh check
     fi
 }

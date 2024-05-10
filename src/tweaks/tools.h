@@ -116,7 +116,7 @@ void _displayM3uTotal()
     char message[28];
     snprintf(message, sizeof(message), "%d playlist files created.", value);
 
-    _toolDialog("M3u Generator", message, false);
+    _toolDialog("M3U Generator", message, false);
     if (video != NULL)
         msleep(1200);
 }
@@ -150,12 +150,12 @@ void tool_generateMiyoogamelists(void *pt)
 
 void tool_sortAppsAZ(void *pt)
 {
-    _runCommandPopup(tools_short_names[3], "/mnt/SDCARD/.tmp_update/script/app_sorter.sh");
+    _runCommandPopup(tools_short_names[5], "/mnt/SDCARD/.tmp_update/script/app_sorter.sh");
 }
 
 void tool_sortAppsZA(void *pt)
 {
-    _runCommandPopup(tools_short_names[4], "/mnt/SDCARD/.tmp_update/script/app_sorter.sh desc");
+    _runCommandPopup(tools_short_names[6], "/mnt/SDCARD/.tmp_update/script/app_sorter.sh desc");
 }
 
 void tool_screenRecorder(void *pt)
